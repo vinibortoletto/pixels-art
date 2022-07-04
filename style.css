@@ -1,0 +1,24 @@
+.color-palette {
+  /* displ */
+}
+
+.color {
+  display: inline-block;
+  border: 1px solid black;
+}
+
+.color.red {
+  background-color: red;
+}
+
+.color.green {
+  background-color: green;
+}
+
+.color.blue {
+  background-color: blue;
+}
+
+.color.yellow {
+  background-color: yellow;
+}
