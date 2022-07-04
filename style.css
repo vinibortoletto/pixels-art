@@ -25,7 +25,6 @@
 /* Pixel Board ------------------------------------- */
 #pixel-board {
   display: grid;
-  grid-template-columns: repeat(5, 40px);
 }
 
 .pixel {

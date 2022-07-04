@@ -1,24 +1,33 @@
 let selectedColor = getDefaultColor();
 
-// ---------------------------------------------------------------|
-
-function createPixels() {
+function createPixels(number) {
   const pixelBoard = document.querySelector('#pixel-board');
-  const pixel = document.createElement('div');
-  pixel.className = 'pixel';
+  pixelBoard.innerHTML = '';
+  let numberOfPixels = 0;
 
-  pixel.addEventListener('click', () => {
-    pixel.style.backgroundColor = selectedColor;
-  });
+  // Set number of pixels
+  if (number) numberOfPixels = number;
+  else numberOfPixels = 5;
 
-  pixelBoard.appendChild(pixel);
+  // Create board
+  for (let i = 0; i < numberOfPixels * numberOfPixels; i += 1) {
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+
+    pixel.addEventListener('click', () => {
+      pixel.style.backgroundColor = selectedColor;
+    });
+
+    pixelBoard.appendChild(pixel);
+  }
+
+  // Style board grid
+  pixelBoard.style.gridTemplateColumns = `repeat(${numberOfPixels}, 40px)`;
 }
-
-for (let i = 0; i < 25; i++) createPixels();
+createPixels();
 
 // ---------------------------------------------------------------|
 
-// Handle Color Palette
 function handleColorPalette() {
   const colors = document.querySelectorAll('.color');
 
@@ -36,7 +45,6 @@ function handleColorPalette() {
     });
   }
 }
-
 handleColorPalette();
 
 // ---------------------------------------------------------------|
@@ -50,12 +58,27 @@ function getDefaultColor() {
 
 // ---------------------------------------------------------------|
 
-const clearButton = document.querySelector('#clear-board');
-clearButton.onclick = clearBoard;
-
 function clearBoard() {
   const pixels = document.querySelectorAll('.pixel');
   for (const pixel of pixels) {
     pixel.style.backgroundColor = 'white';
   }
+}
+
+const clearButton = document.querySelector('#clear-board');
+clearButton.onclick = clearBoard;
+
+// ---------------------------------------------------------------|
+
+const generateBoardButton = document.querySelector('#generate-board');
+generateBoardButton.onclick = setBoardSize;
+
+function setBoardSize() {
+  const input = document.querySelector('#board-size');
+
+  // Check if input is empty
+  if (input.value === '') return alert('Board inválido!');
+
+  // Create board
+  createPixels(input.value);
 }
