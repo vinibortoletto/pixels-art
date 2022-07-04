@@ -47,3 +47,15 @@ function getDefaultColor() {
 
   return defaultColor;
 }
+
+// ---------------------------------------------------------------|
+
+const clearButton = document.querySelector('#clear-board');
+clearButton.onclick = clearBoard;
+
+function clearBoard() {
+  const pixels = document.querySelectorAll('.pixel');
+  for (const pixel of pixels) {
+    pixel.style.backgroundColor = 'white';
+  }
+}
