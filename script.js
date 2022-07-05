@@ -75,10 +75,13 @@ generateBoardButton.onclick = setBoardSize;
 
 function setBoardSize() {
   const input = document.querySelector('#board-size');
+  let numberOfPixels = input.value;
 
   // Check if input is empty
-  if (input.value === '') return alert('Board inválido!');
+  if (numberOfPixels === '') return alert('Board inválido!');
 
-  // Create board
-  createPixels(input.value);
+  if (numberOfPixels < 5) numberOfPixels = 5;
+  if (numberOfPixels > 50) numberOfPixels = 50;
+
+  createPixels(numberOfPixels);
 }
