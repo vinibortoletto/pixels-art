@@ -6,20 +6,8 @@
   border: 1px solid black;
 }
 
-.color.black {
+.black {
   background-color: black;
-}
-
-.color.green {
-  background-color: green;
-}
-
-.color.blue {
-  background-color: blue;
-}
-
-.color.yellow {
-  background-color: yellow;
 }
 
 /* Pixel Board ------------------------------------- */
