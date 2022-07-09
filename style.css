@@ -1,7 +1,18 @@
+:root {
+  --c-darkGrey: #2c3639;
+  --c-grey: #3f4e4f;
+  --c-pink: #a27b5c;
+  --c-white: #dcd7c9;
+}
+
+.body {
+  max-width: 30rem;
+}
+
 /* Color Palette ----------------------------------- */
 .color {
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   display: inline-block;
   border: 1px solid black;
 }
@@ -20,4 +31,8 @@
   height: 40px;
   background-color: white;
   border: 1px solid black;
+}
+
+.selected {
+  border: 3px solid grey;
 }

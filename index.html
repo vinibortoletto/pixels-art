@@ -5,30 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto Pixels Art</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <h1 id="title">Paleta de Cores</h1>
 
-    <section id="color-palette">
-      <div class="color black selected"></div>
-      <div class="color"></div>
-      <div class="color"></div>
-      <div class="color"></div>
+  <body class="body bg-dark text-light container">
+    <header class="header d-flex justify-content-center my-5 text-white-50">
+      <h1 id="header__title">Paleta de Cores</h1>
+    </header>
+
+    <section
+      id="color-palette"
+      class="d-flex justify-content-center gap-2 mb-4"
+    >
+      <div class="color black selected shadow"></div>
+      <div class="color shadow"></div>
+      <div class="color shadow"></div>
+      <div class="color shadow"></div>
     </section>
 
-    <div>
-      <label for="board-size">
-        Número de pixels
-        <input type="number" min="1" id="board-size" aria-label="board-size" />
-      </label>
+    <div class="input-group container mb-2">
+      <label for="board-size" class="input-group-text">Número de pixels</label>
+      <input type="number" min="1" id="board-size" class="form-control" />
 
-      <button type="button" id="generate-board">VQV</button>
+      <button type="button" id="generate-board" class="btn btn-primary">
+        VQV
+      </button>
     </div>
 
-    <button id="clear-board" type="button">Limpar</button>
+    <div class="container">
+      <button
+        id="clear-board"
+        type="button"
+        class="container btn btn-secondary"
+      >
+        Limpar
+      </button>
+    </div>
 
-    <section id="pixel-board"></section>
+    <section
+      id="pixel-board"
+      class="d-grid justify-content-center my-4"
+    ></section>
 
     <script src="script.js" type="module"></script>
   </body>

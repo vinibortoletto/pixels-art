@@ -12,7 +12,7 @@ export default function createPixels(number) {
   // Create board
   for (let i = 0; i < numberOfPixels * numberOfPixels; i += 1) {
     const pixel = document.createElement('div');
-    pixel.className = 'pixel';
+    pixel.classList = 'pixel';
 
     pixel.addEventListener('click', () => {
       pixel.style.backgroundColor = getSelectedColor();
